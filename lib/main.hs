@@ -1,7 +1,8 @@
 module Main where
 import System.Environment
+import Parser
 
 main :: IO ()
 main = do
-  args <- getArgs
-  putStrLn ("Hello, " ++ args !! 0)
+  (expr:_) <- getArgs
+  putStrLn(readExpr expr)
